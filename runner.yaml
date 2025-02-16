@@ -17,4 +17,4 @@ webform:
 
 launch:
   type: binary
-  command: cd /opt/HExHTTP && python3 hexhttp.py -u '${url_to_test}'
+  command: cd /opt/HExHTTP && python3 hexhttp.py -u ${url_to_test}
