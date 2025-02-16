@@ -7,7 +7,7 @@ build:
   commands: |
     echo "START: Building the runner"
     cd /opt && git clone https://github.com/c0dejump/HExHTTP.git
-    cd /opt/hexhttp && python3 -m pip install -U -r requirements.txt
+    cd /opt/HExHTTP && python3 -m pip install -U -r requirements.txt
     echo "END: Building the runner"
 
 webform:
@@ -17,4 +17,4 @@ webform:
 
 launch:
   type: binary
-  command: cd /opt/hexhttp && python3 hexhttp.py -u ${url_to_test}
+  command: cd /opt/HExHTTP && python3 hexhttp.py -u ${url_to_test}
