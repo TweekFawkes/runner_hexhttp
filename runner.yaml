@@ -1,0 +1,20 @@
+runner:
+  name: Test HTTP Headers
+  description: Tests on HTTP headers and analyze the results to identify vulnerabilities and interesting behaviors.
+  version: 0.0.1
+
+build:
+  commands: |
+    echo "START: Building the runner"
+    cd /opt && git clone https://github.com/c0dejump/HExHTTP.git
+    cd /opt/hexhttp && python3 -m pip install -U -r requirements.txt
+    echo "END: Building the runner"
+
+webform:
+  - name: url_to_test
+    prompt: URL to Test
+    type: text
+
+launch:
+  type: binary
+  command: cd /opt/hexhttp && python3 hexhttp.py -u ${url_to_test}
